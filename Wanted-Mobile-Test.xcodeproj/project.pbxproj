@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F420C67D287182DE00694897 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C67C287182DE00694897 /* AppDelegate.swift */; };
-		F420C681287182DE00694897 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C680287182DE00694897 /* ViewController.swift */; };
+		F420C681287182DE00694897 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C680287182DE00694897 /* SearchViewController.swift */; };
 		F420C686287182E000694897 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F420C685287182E000694897 /* Assets.xcassets */; };
 		F420C689287182E000694897 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F420C687287182E000694897 /* LaunchScreen.storyboard */; };
 		F420C694287182E000694897 /* Wanted_Mobile_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C693287182E000694897 /* Wanted_Mobile_TestTests.swift */; };
@@ -21,6 +21,17 @@
 		F420C6BB287184AF00694897 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F420C6BA287184AF00694897 /* ReactiveMoya */; };
 		F420C6BD287184AF00694897 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = F420C6BC287184AF00694897 /* RxMoya */; };
 		F420C6C0287184CB00694897 /* RxOptional in Frameworks */ = {isa = PBXBuildFile; productRef = F420C6BF287184CB00694897 /* RxOptional */; };
+		F420C6C22871864D00694897 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6C12871864D00694897 /* BaseViewController.swift */; };
+		F420C6C828718A5400694897 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6C728718A5400694897 /* SearchRouter.swift */; };
+		F420C6CA28718A5D00694897 /* SearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6C928718A5D00694897 /* SearchRepository.swift */; };
+		F420C6CC28718A6300694897 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CB28718A6300694897 /* SearchService.swift */; };
+		F420C6CE28718A6C00694897 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CD28718A6C00694897 /* SearchViewModel.swift */; };
+		F420C6D028718A9D00694897 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CF28718A9D00694897 /* Constant.swift */; };
+		F420C6D328718F9E00694897 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D228718F9E00694897 /* Volume.swift */; };
+		F420C6D52871970D00694897 /* VolumeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D42871970D00694897 /* VolumeResponse.swift */; };
+		F420C6D82871977700694897 /* Moya+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D72871977700694897 /* Moya+Rx.swift */; };
+		F420C6DB287197A600694897 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6DA287197A600694897 /* NetworkError.swift */; };
+		F420C6DE2871985100694897 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6DD2871985100694897 /* UIViewController+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +54,7 @@
 /* Begin PBXFileReference section */
 		F420C679287182DE00694897 /* Wanted-Mobile-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wanted-Mobile-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F420C67C287182DE00694897 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F420C680287182DE00694897 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F420C680287182DE00694897 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F420C685287182E000694897 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F420C688287182E000694897 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F420C68A287182E000694897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +63,17 @@
 		F420C699287182E000694897 /* Wanted-Mobile-TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wanted-Mobile-TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F420C69D287182E000694897 /* Wanted_Mobile_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wanted_Mobile_TestUITests.swift; sourceTree = "<group>"; };
 		F420C69F287182E000694897 /* Wanted_Mobile_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wanted_Mobile_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F420C6C12871864D00694897 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F420C6C728718A5400694897 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		F420C6C928718A5D00694897 /* SearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepository.swift; sourceTree = "<group>"; };
+		F420C6CB28718A6300694897 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		F420C6CD28718A6C00694897 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		F420C6CF28718A9D00694897 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F420C6D228718F9E00694897 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		F420C6D42871970D00694897 /* VolumeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeResponse.swift; sourceTree = "<group>"; };
+		F420C6D72871977700694897 /* Moya+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Rx.swift"; sourceTree = "<group>"; };
+		F420C6DA287197A600694897 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F420C6DD2871985100694897 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +158,15 @@
 			isa = PBXGroup;
 			children = (
 				F420C67C287182DE00694897 /* AppDelegate.swift */,
+				F420C6CF28718A9D00694897 /* Constant.swift */,
+				F420C6D92871979B00694897 /* Enum */,
+				F420C6D128718B1E00694897 /* Model */,
 				F420C6AE2871840100694897 /* Present */,
+				F420C6C428718A3400694897 /* Repository */,
+				F420C6C328718A3000694897 /* Router */,
+				F420C6D62871976900694897 /* Rx */,
+				F420C6C528718A3A00694897 /* Service */,
+				F420C6C628718A3E00694897 /* ViewModel */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -154,9 +184,76 @@
 		F420C6AE2871840100694897 /* Present */ = {
 			isa = PBXGroup;
 			children = (
-				F420C680287182DE00694897 /* ViewController.swift */,
+				F420C680287182DE00694897 /* SearchViewController.swift */,
+				F420C6C12871864D00694897 /* BaseViewController.swift */,
 			);
 			path = Present;
+			sourceTree = "<group>";
+		};
+		F420C6C328718A3000694897 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6C728718A5400694897 /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F420C6C428718A3400694897 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6C928718A5D00694897 /* SearchRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F420C6C528718A3A00694897 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6CB28718A6300694897 /* SearchService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F420C6C628718A3E00694897 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6CD28718A6C00694897 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F420C6D128718B1E00694897 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6D228718F9E00694897 /* Volume.swift */,
+				F420C6D42871970D00694897 /* VolumeResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F420C6D62871976900694897 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6D72871977700694897 /* Moya+Rx.swift */,
+				F420C6DD2871985100694897 /* UIViewController+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		F420C6D92871979B00694897 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6DC287197B500694897 /* Error */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		F420C6DC287197B500694897 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				F420C6DA287197A600694897 /* NetworkError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,8 +401,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F420C681287182DE00694897 /* ViewController.swift in Sources */,
+				F420C6C828718A5400694897 /* SearchRouter.swift in Sources */,
+				F420C6CE28718A6C00694897 /* SearchViewModel.swift in Sources */,
+				F420C6D52871970D00694897 /* VolumeResponse.swift in Sources */,
+				F420C681287182DE00694897 /* SearchViewController.swift in Sources */,
+				F420C6D328718F9E00694897 /* Volume.swift in Sources */,
+				F420C6D028718A9D00694897 /* Constant.swift in Sources */,
+				F420C6DE2871985100694897 /* UIViewController+Rx.swift in Sources */,
+				F420C6CA28718A5D00694897 /* SearchRepository.swift in Sources */,
+				F420C6CC28718A6300694897 /* SearchService.swift in Sources */,
+				F420C6D82871977700694897 /* Moya+Rx.swift in Sources */,
+				F420C6DB287197A600694897 /* NetworkError.swift in Sources */,
 				F420C67D287182DE00694897 /* AppDelegate.swift in Sources */,
+				F420C6C22871864D00694897 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
