@@ -203,10 +203,10 @@
 		F420C6AE2871840100694897 /* Present */ = {
 			isa = PBXGroup;
 			children = (
-				F420C680287182DE00694897 /* SearchViewController.swift */,
-				F460D5D128741A40009F3C31 /* LoadingView.swift */,
-				F460D5BF28727F0D009F3C31 /* BookCell.swift */,
 				F420C6C12871864D00694897 /* BaseViewController.swift */,
+				F460D5BF28727F0D009F3C31 /* BookCell.swift */,
+				F460D5D128741A40009F3C31 /* LoadingView.swift */,
+				F420C680287182DE00694897 /* SearchViewController.swift */,
 			);
 			path = Present;
 			sourceTree = "<group>";
@@ -284,8 +284,8 @@
 		F460D5C4287283D7009F3C31 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F460D5C5287283E6009F3C31 /* UIImageView+Extensions.swift */,
 				F460D5C928728746009F3C31 /* NSObject+Extensions.swift */,
+				F460D5C5287283E6009F3C31 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

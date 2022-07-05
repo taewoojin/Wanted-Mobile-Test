@@ -71,4 +71,13 @@ public extension Reactive where Base: UIViewController {
         return ControlEvent(events: source)
     }
     
+    var showAlert: Binder<String> {
+        Binder(base) { context, value in
+            let alertView = UIAlertController(title: nil, message: value, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alertView.addAction(okAction)
+            context.present(alertView, animated: true)
+        }
+    }
+    
 }

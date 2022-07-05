@@ -81,6 +81,7 @@ class BookCell: UITableViewCell {
     func configure(with book: Book) {
         thumbnailView.loadImage(
             urlString: book.volumeInfo.imageLinks?.thumbnail,
+            defaultImage: UIImage(systemName: "book"),
             failedHandler: { [weak self] _ in
                 self?.thumbnailView.image = UIImage(systemName: "book")
             }

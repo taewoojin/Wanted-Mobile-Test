@@ -24,6 +24,8 @@ class SearchViewController: BaseViewController {
     
     let loadingView = LoadingView()
     
+    let alertView = UIAlertController()
+    
     
     // MARK: Properties
     
@@ -153,12 +155,11 @@ class SearchViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         viewModel.currentStore
-            .map { $0.error }
+            .map { $0.error?.message }
             .filterNil()
             .distinctUntilChanged()
-            .subscribe(onNext: { error in
-                print("error: ", error.message)
-            })
+            .bind(to: rx.showAlert)
             .disposed(by: disposeBag)
+        
     }
 }
