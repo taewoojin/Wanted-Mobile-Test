@@ -22,6 +22,8 @@ class SearchViewController: BaseViewController {
     
     let emptyTitleLabel = UILabel()
     
+    let loadingView = LoadingView()
+    
     
     // MARK: Properties
     
@@ -55,6 +57,10 @@ class SearchViewController: BaseViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
+        let indicator = UIActivityIndicatorView(style: .medium)
+        indicator.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
+        indicator.startAnimating()
+        tableView.tableFooterView = indicator
         tableView.register(BookCell.self, forCellReuseIdentifier: BookCell.typeName)
         
         emptyTitleLabel.font = .systemFont(ofSize: 18, weight: .bold)
@@ -74,13 +80,11 @@ class SearchViewController: BaseViewController {
         emptyTitleLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
         }
-    }
-    
-    override func setupLifeCycleBinding() {
-        rx.viewDidLoad
-            .map { .fetchBooks }
-            .bind(to: viewModel.action)
-            .disposed(by: disposeBag)
+        
+        view.addSubview(loadingView)
+        loadingView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
     
     override func setupBinding() {
@@ -93,6 +97,7 @@ class SearchViewController: BaseViewController {
         searchController.searchBar.rx.searchButtonClicked
             .flatMap {
                 Observable.concat(
+                    .just(.loading(true)),
                     .just(.resetBooks),
                     .just(.fetchBooks)
                 )
@@ -109,7 +114,12 @@ class SearchViewController: BaseViewController {
             .filter { [unowned viewModel] (_, indexPath) in
                 return viewModel.store.books.count - 2 == indexPath.row
             }
-            .map { _ in .fetchBooks }
+            .flatMap { _ in
+                Observable.concat(
+                    .just(.loading(true)),
+                    .just(.fetchBooks)
+                )
+            }
             .bind(to: viewModel.action)
             .disposed(by: disposeBag)
         
@@ -128,6 +138,18 @@ class SearchViewController: BaseViewController {
             .map { !$0.books.isEmpty }
             .distinctUntilChanged()
             .bind(to: emptyTitleLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.currentStore
+            .map { !$0.isLoading && $0.books.isEmpty }
+            .distinctUntilChanged()
+            .bind(to: tableView.tableFooterView!.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.currentStore
+            .map { !($0.isLoading && $0.books.isEmpty) }
+            .distinctUntilChanged()
+            .bind(to: loadingView.rx.isHidden)
             .disposed(by: disposeBag)
         
         viewModel.currentStore

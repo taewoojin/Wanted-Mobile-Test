@@ -15,6 +15,7 @@ class SearchViewModel {
         case fetchBooks
         case updateSearchText(String)
         case resetBooks
+        case loading(Bool)
     }
     
     enum Mutation {
@@ -22,9 +23,11 @@ class SearchViewModel {
         case setStartIndex(Int)
         case setSearchText(String)
         case setError(ResponseError)
+        case setLoading(Bool)
     }
     
     struct Store {
+        var isLoading: Bool = false
         var searchText: String = ""
         var books: [Book] = []
         var startIndex: Int = 0
@@ -74,14 +77,18 @@ class SearchViewModel {
                     case .success(let info):
                         return .merge(
                             .just(.setBooks(self.store.books + info.items)),
-                            .just(.setStartIndex(self.store.startIndex + self.store.maxResults))
+                            .just(.setStartIndex(self.store.startIndex + self.store.maxResults)),
+                            .just(.setLoading(false))
                         )
                         
                     case .failure(let error):
                         guard let error = error as? BaseError else { return .empty() }
                         
                         let responseError = ResponseError(message: error.message)
-                        return .just(.setError(responseError))
+                        return .merge(
+                            .just(.setError(responseError)),
+                            .just(.setLoading(false))
+                        )
                     }
                 }
             
@@ -90,6 +97,9 @@ class SearchViewModel {
             
         case .resetBooks:
             return .just(.setBooks([]))
+            
+        case .loading(let isLoading):
+            return .just(.setLoading(isLoading))
         }
     }
     
@@ -106,6 +116,9 @@ class SearchViewModel {
             
         case .setError(let error):
             store.error = error
+            
+        case .setLoading(let isLoading):
+            store.isLoading = isLoading
         }
         
         return .just(store)
