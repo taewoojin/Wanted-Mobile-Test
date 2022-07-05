@@ -20,6 +20,7 @@ class SearchViewModel {
     
     enum Mutation {
         case setBooks([Book])
+        case setTotalBooks(Int)
         case setStartIndex(Int)
         case setSearchText(String)
         case setError(ResponseError)
@@ -29,6 +30,7 @@ class SearchViewModel {
     struct Store {
         var isLoading: Bool = false
         var searchText: String = ""
+        var totalBooks: Int = 0
         var books: [Book] = []
         var startIndex: Int = 0
         let maxResults: Int = 20
@@ -74,9 +76,10 @@ class SearchViewModel {
                 .asObservable()
                 .flatMap { result -> Observable<Mutation> in
                     switch result {
-                    case .success(let info):
+                    case .success(let response):
                         return .merge(
-                            .just(.setBooks(self.store.books + info.items)),
+                            .just(.setTotalBooks(response.totalItems)),
+                            .just(.setBooks(self.store.books + response.items)),
                             .just(.setStartIndex(self.store.startIndex + self.store.maxResults)),
                             .just(.setLoading(false))
                         )
@@ -96,7 +99,10 @@ class SearchViewModel {
             return .just(.setSearchText(text))
             
         case .resetBooks:
-            return .just(.setBooks([]))
+            return .merge(
+                .just(.setBooks([])),
+                .just(.setTotalBooks(0))
+            )
             
         case .loading(let isLoading):
             return .just(.setLoading(isLoading))
@@ -107,6 +113,9 @@ class SearchViewModel {
         switch mutation {
         case .setBooks(let books):
             store.books = books
+            
+        case .setTotalBooks(let count):
+            store.totalBooks = count
             
         case .setStartIndex(let startIndex):
             store.startIndex = startIndex

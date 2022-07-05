@@ -24,7 +24,9 @@ class SearchViewController: BaseViewController {
     
     let loadingView = LoadingView()
     
-    let alertView = UIAlertController()
+    lazy var headerView = SearchHeaderView(viewModel: viewModel)
+    
+    lazy var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40))
     
     
     // MARK: Properties
@@ -59,10 +61,13 @@ class SearchViewController: BaseViewController {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        let indicator = UIActivityIndicatorView(style: .medium)
-        indicator.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 44)
+        indicator.style = .medium
         indicator.startAnimating()
+        
+        headerView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 40)
+        
         tableView.tableFooterView = indicator
+        tableView.tableHeaderView = headerView
         tableView.register(BookCell.self, forCellReuseIdentifier: BookCell.typeName)
         
         emptyTitleLabel.font = .systemFont(ofSize: 18, weight: .bold)

@@ -41,6 +41,7 @@
 		F460D5CE2873F7FA009F3C31 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5CD2873F7FA009F3C31 /* BaseError.swift */; };
 		F460D5D02873F811009F3C31 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5CF2873F811009F3C31 /* ResponseError.swift */; };
 		F460D5D228741A40009F3C31 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5D128741A40009F3C31 /* LoadingView.swift */; };
+		F460D5D52874889D009F3C31 /* SearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5D42874889D009F3C31 /* SearchHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		F460D5CD2873F7FA009F3C31 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
 		F460D5CF2873F811009F3C31 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		F460D5D128741A40009F3C31 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F460D5D42874889D009F3C31 /* SearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				F420C6C12871864D00694897 /* BaseViewController.swift */,
 				F460D5BF28727F0D009F3C31 /* BookCell.swift */,
 				F460D5D128741A40009F3C31 /* LoadingView.swift */,
+				F460D5D42874889D009F3C31 /* SearchHeaderView.swift */,
 				F420C680287182DE00694897 /* SearchViewController.swift */,
 			);
 			path = Present;
@@ -444,6 +447,7 @@
 				F460D5CE2873F7FA009F3C31 /* BaseError.swift in Sources */,
 				F460D5D228741A40009F3C31 /* LoadingView.swift in Sources */,
 				F420C681287182DE00694897 /* SearchViewController.swift in Sources */,
+				F460D5D52874889D009F3C31 /* SearchHeaderView.swift in Sources */,
 				F420C6D328718F9E00694897 /* Book.swift in Sources */,
 				F460D5D02873F811009F3C31 /* ResponseError.swift in Sources */,
 				F420C6D028718A9D00694897 /* Constant.swift in Sources */,
