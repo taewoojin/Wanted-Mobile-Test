@@ -11,7 +11,7 @@ import RxSwift
 
 
 protocol SearchServiceProtocol {
-    func fetchBooks(to searchString: String, startIndex: Int, maxResults: Int) -> Single<Result<VolumeResponse, Error>>
+    func fetchBooks(to searchString: String, startIndex: Int, maxResults: Int) -> Single<Result<BookResponse, Error>>
 }
 
 
@@ -28,7 +28,7 @@ struct SearchService: SearchServiceProtocol {
         to searchString: String,
         startIndex: Int,
         maxResults: Int
-    ) -> Single<Result<VolumeResponse, Error>> {
+    ) -> Single<Result<BookResponse, Error>> {
         repository.fetchBooks(to: searchString, startIndex: startIndex, maxResults: maxResults)
     }
 }

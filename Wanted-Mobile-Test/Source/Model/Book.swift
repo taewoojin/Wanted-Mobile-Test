@@ -1,40 +1,45 @@
 //
-//  Volume.swift
+//  Book.swift
 //  Wanted-Mobile-Test
 //
 //  Created by 진태우 on 2022/07/03.
 //
 
 
-struct Volume: Decodable {
-    let kind: String
+struct Book: Decodable, Equatable {
+//    let kind: String
     let id: String
-    let etag: String
-    let selfLink: String
+//    let etag: String
+//    let selfLink: String
     let volumeInfo: Info
-    let saleInfo: SaleInfo
-    let accessInfo: AccessInfo
-    let searchInfo : SearchInfo
+//    let saleInfo: SaleInfo
+//    let accessInfo: AccessInfo
+//    let searchInfo : SearchInfo?
+    
+    static func == (lhs: Book, rhs: Book) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     
     struct Info: Decodable {
         let title: String
         let subtitle: String?
         let authors: [String]?
-        let publishedDate: String
-        let industryIdentifiers: [IndustryID]
-        let readingModes: ReadingModes
-        let pageCount: Int?
-        let printType: String
-        let categories: [String]
-        let maturityRating: String
-        let allowAnonLogging: Bool
-        let contentVersion: String
-        let panelizationSummary: PanelizationSummary
-        let imageLinks: ImageLinks
-        let language: String
-        let previewLink: String
-        let infoLink: String
-        let canonicalVolumeLink: String
+        let publishedDate: String?
+//        let industryIdentifiers: [IndustryID]
+//        let readingModes: ReadingModes
+//        let pageCount: Int?
+//        let printType: String
+//        let categories: [String]?
+//        let maturityRating: String
+//        let allowAnonLogging: Bool
+//        let contentVersion: String
+//        let panelizationSummary: PanelizationSummary
+        let imageLinks: ImageLinks?
+//        let language: String
+//        let previewLink: String
+//        let infoLink: String
+//        let canonicalVolumeLink: String
         
         struct IndustryID: Decodable {
             let type: String

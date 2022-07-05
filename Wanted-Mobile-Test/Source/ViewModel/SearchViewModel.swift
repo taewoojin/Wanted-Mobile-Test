@@ -12,18 +12,24 @@ import RxSwift
 class SearchViewModel {
     
     enum Action {
-        case fetchBooks(String)
+        case fetchBooks
+        case updateSearchText(String)
+        case resetBooks
     }
     
     enum Mutation {
-        case setBooks([Volume])
+        case setBooks([Book])
         case setStartIndex(Int)
+        case setSearchText(String)
+        case setError(ResponseError)
     }
     
     struct Store {
-        var books: [Volume] = []
+        var searchText: String = ""
+        var books: [Book] = []
         var startIndex: Int = 0
         let maxResults: Int = 20
+        var error: ResponseError?
     }
     
     
@@ -55,11 +61,10 @@ class SearchViewModel {
     
     private func mutate(_ action: Action) -> Observable<Mutation> {
         switch action {
-            
-        case .fetchBooks(let searchString):
+        case .fetchBooks:
             return service
                 .fetchBooks(
-                    to: searchString,
+                    to: store.searchText,
                     startIndex: store.startIndex,
                     maxResults: store.maxResults
                 )
@@ -68,18 +73,23 @@ class SearchViewModel {
                     switch result {
                     case .success(let info):
                         return .merge(
-                            .just(.setBooks(info.items)),
+                            .just(.setBooks(self.store.books + info.items)),
                             .just(.setStartIndex(self.store.startIndex + self.store.maxResults))
                         )
                         
                     case .failure(let error):
-                        // TODO: 상황에 따른 에러 처리
-                        print(error)
-                        return .empty()
+                        guard let error = error as? BaseError else { return .empty() }
                         
+                        let responseError = ResponseError(message: error.message)
+                        return .just(.setError(responseError))
                     }
                 }
             
+        case .updateSearchText(let text):
+            return .just(.setSearchText(text))
+            
+        case .resetBooks:
+            return .just(.setBooks([]))
         }
     }
     
@@ -91,6 +101,11 @@ class SearchViewModel {
         case .setStartIndex(let startIndex):
             store.startIndex = startIndex
         
+        case .setSearchText(let text):
+            store.searchText = text
+            
+        case .setError(let error):
+            store.error = error
         }
         
         return .just(store)

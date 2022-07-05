@@ -14,7 +14,7 @@ import RxSwift
 
 
 protocol SearchRepositoryProtocol {
-    func fetchBooks(to searchString: String, startIndex: Int, maxResults: Int) -> Single<Result<VolumeResponse, Error>>
+    func fetchBooks(to searchString: String, startIndex: Int, maxResults: Int) -> Single<Result<BookResponse, Error>>
 }
 
 
@@ -32,10 +32,10 @@ class SearchRepository: SearchRepositoryProtocol {
         to searchString: String,
         startIndex: Int,
         maxResults: Int
-    ) -> Single<Result<VolumeResponse, Error>> {
+    ) -> Single<Result<BookResponse, Error>> {
         return provider.rx
             .request(.fetchBooks(searchString, startIndex, maxResults))
-            .asResult(VolumeResponse.self)
+            .asResult(BookResponse.self)
     }
     
 }

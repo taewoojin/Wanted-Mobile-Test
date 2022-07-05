@@ -27,11 +27,19 @@
 		F420C6CC28718A6300694897 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CB28718A6300694897 /* SearchService.swift */; };
 		F420C6CE28718A6C00694897 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CD28718A6C00694897 /* SearchViewModel.swift */; };
 		F420C6D028718A9D00694897 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6CF28718A9D00694897 /* Constant.swift */; };
-		F420C6D328718F9E00694897 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D228718F9E00694897 /* Volume.swift */; };
-		F420C6D52871970D00694897 /* VolumeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D42871970D00694897 /* VolumeResponse.swift */; };
+		F420C6D328718F9E00694897 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D228718F9E00694897 /* Book.swift */; };
+		F420C6D52871970D00694897 /* BookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D42871970D00694897 /* BookResponse.swift */; };
 		F420C6D82871977700694897 /* Moya+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6D72871977700694897 /* Moya+Rx.swift */; };
 		F420C6DB287197A600694897 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6DA287197A600694897 /* NetworkError.swift */; };
 		F420C6DE2871985100694897 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F420C6DD2871985100694897 /* UIViewController+Rx.swift */; };
+		F460D5C028727F0D009F3C31 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5BF28727F0D009F3C31 /* BookCell.swift */; };
+		F460D5C3287283D1009F3C31 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F460D5C2287283D1009F3C31 /* Kingfisher */; };
+		F460D5C6287283E6009F3C31 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5C5287283E6009F3C31 /* UIImageView+Extensions.swift */; };
+		F460D5C82872870E009F3C31 /* ImageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5C72872870E009F3C31 /* ImageError.swift */; };
+		F460D5CA28728746009F3C31 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5C928728746009F3C31 /* NSObject+Extensions.swift */; };
+		F460D5CC2873128E009F3C31 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5CB2873128E009F3C31 /* JSONError.swift */; };
+		F460D5CE2873F7FA009F3C31 /* BaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5CD2873F7FA009F3C31 /* BaseError.swift */; };
+		F460D5D02873F811009F3C31 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F460D5CF2873F811009F3C31 /* ResponseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,11 +77,18 @@
 		F420C6CB28718A6300694897 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		F420C6CD28718A6C00694897 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		F420C6CF28718A9D00694897 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		F420C6D228718F9E00694897 /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
-		F420C6D42871970D00694897 /* VolumeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeResponse.swift; sourceTree = "<group>"; };
+		F420C6D228718F9E00694897 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		F420C6D42871970D00694897 /* BookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookResponse.swift; sourceTree = "<group>"; };
 		F420C6D72871977700694897 /* Moya+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Moya+Rx.swift"; sourceTree = "<group>"; };
 		F420C6DA287197A600694897 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F420C6DD2871985100694897 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		F460D5BF28727F0D009F3C31 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		F460D5C5287283E6009F3C31 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		F460D5C72872870E009F3C31 /* ImageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageError.swift; sourceTree = "<group>"; };
+		F460D5C928728746009F3C31 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
+		F460D5CB2873128E009F3C31 /* JSONError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
+		F460D5CD2873F7FA009F3C31 /* BaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseError.swift; sourceTree = "<group>"; };
+		F460D5CF2873F811009F3C31 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 				F420C6BD287184AF00694897 /* RxMoya in Frameworks */,
 				F420C6B62871847400694897 /* RxSwift in Frameworks */,
 				F420C6B42871847400694897 /* RxCocoa in Frameworks */,
+				F460D5C3287283D1009F3C31 /* Kingfisher in Frameworks */,
 				F420C6B9287184AF00694897 /* Moya in Frameworks */,
 				F420C6BB287184AF00694897 /* ReactiveMoya in Frameworks */,
 				F420C6B12871845800694897 /* SnapKit in Frameworks */,
@@ -160,6 +176,7 @@
 				F420C67C287182DE00694897 /* AppDelegate.swift */,
 				F420C6CF28718A9D00694897 /* Constant.swift */,
 				F420C6D92871979B00694897 /* Enum */,
+				F460D5C4287283D7009F3C31 /* Extensions */,
 				F420C6D128718B1E00694897 /* Model */,
 				F420C6AE2871840100694897 /* Present */,
 				F420C6C428718A3400694897 /* Repository */,
@@ -185,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				F420C680287182DE00694897 /* SearchViewController.swift */,
+				F460D5BF28727F0D009F3C31 /* BookCell.swift */,
 				F420C6C12871864D00694897 /* BaseViewController.swift */,
 			);
 			path = Present;
@@ -225,8 +243,9 @@
 		F420C6D128718B1E00694897 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F420C6D228718F9E00694897 /* Volume.swift */,
-				F420C6D42871970D00694897 /* VolumeResponse.swift */,
+				F420C6D228718F9E00694897 /* Book.swift */,
+				F420C6D42871970D00694897 /* BookResponse.swift */,
+				F460D5CF2873F811009F3C31 /* ResponseError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,8 +271,20 @@
 			isa = PBXGroup;
 			children = (
 				F420C6DA287197A600694897 /* NetworkError.swift */,
+				F460D5C72872870E009F3C31 /* ImageError.swift */,
+				F460D5CB2873128E009F3C31 /* JSONError.swift */,
+				F460D5CD2873F7FA009F3C31 /* BaseError.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		F460D5C4287283D7009F3C31 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F460D5C5287283E6009F3C31 /* UIImageView+Extensions.swift */,
+				F460D5C928728746009F3C31 /* NSObject+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +311,7 @@
 				F420C6BA287184AF00694897 /* ReactiveMoya */,
 				F420C6BC287184AF00694897 /* RxMoya */,
 				F420C6BF287184CB00694897 /* RxOptional */,
+				F460D5C2287283D1009F3C31 /* Kingfisher */,
 			);
 			productName = "Wanted-Mobile-Test";
 			productReference = F420C679287182DE00694897 /* Wanted-Mobile-Test.app */;
@@ -358,6 +390,7 @@
 				F420C6B22871847300694897 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				F420C6B7287184AF00694897 /* XCRemoteSwiftPackageReference "Moya" */,
 				F420C6BE287184CB00694897 /* XCRemoteSwiftPackageReference "RxOptional" */,
+				F460D5C1287283D1009F3C31 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F420C67A287182DE00694897 /* Products */;
 			projectDirPath = "";
@@ -401,16 +434,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F460D5C6287283E6009F3C31 /* UIImageView+Extensions.swift in Sources */,
 				F420C6C828718A5400694897 /* SearchRouter.swift in Sources */,
 				F420C6CE28718A6C00694897 /* SearchViewModel.swift in Sources */,
-				F420C6D52871970D00694897 /* VolumeResponse.swift in Sources */,
+				F420C6D52871970D00694897 /* BookResponse.swift in Sources */,
+				F460D5CE2873F7FA009F3C31 /* BaseError.swift in Sources */,
 				F420C681287182DE00694897 /* SearchViewController.swift in Sources */,
-				F420C6D328718F9E00694897 /* Volume.swift in Sources */,
+				F420C6D328718F9E00694897 /* Book.swift in Sources */,
+				F460D5D02873F811009F3C31 /* ResponseError.swift in Sources */,
 				F420C6D028718A9D00694897 /* Constant.swift in Sources */,
 				F420C6DE2871985100694897 /* UIViewController+Rx.swift in Sources */,
+				F460D5C82872870E009F3C31 /* ImageError.swift in Sources */,
+				F460D5C028727F0D009F3C31 /* BookCell.swift in Sources */,
 				F420C6CA28718A5D00694897 /* SearchRepository.swift in Sources */,
 				F420C6CC28718A6300694897 /* SearchService.swift in Sources */,
+				F460D5CC2873128E009F3C31 /* JSONError.swift in Sources */,
 				F420C6D82871977700694897 /* Moya+Rx.swift in Sources */,
+				F460D5CA28728746009F3C31 /* NSObject+Extensions.swift in Sources */,
 				F420C6DB287197A600694897 /* NetworkError.swift in Sources */,
 				F420C67D287182DE00694897 /* AppDelegate.swift in Sources */,
 				F420C6C22871864D00694897 /* BaseViewController.swift in Sources */,
@@ -783,6 +823,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F460D5C1287283D1009F3C31 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -820,6 +868,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F420C6BE287184CB00694897 /* XCRemoteSwiftPackageReference "RxOptional" */;
 			productName = RxOptional;
+		};
+		F460D5C2287283D1009F3C31 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F460D5C1287283D1009F3C31 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
